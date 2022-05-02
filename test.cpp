@@ -18,7 +18,7 @@ int main()
     Dice damage_rayOfFrost(8,2);
     Dice damage_shortsword(6,1,MOD_DEXTERITY);
     Dice damage_dagger(4,1,MOD_DEXTERITY);
-    Dice damage_sneak();
+    Dice damage_sneak;
 
     Dice seven_d10(7,10);
     Dice d8(8);
@@ -47,4 +47,6 @@ int main()
     }
     else
         std::cout << "You rolled a " << attack_rayOfFrost.getValue() << " so the attack did not land.\n";
+
+    return 0;
 }

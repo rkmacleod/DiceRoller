@@ -100,3 +100,8 @@ int Dice::getModifier()
 {
     return mod;
 }
+
+int Dice::getValue()
+{
+    return val;
+}
