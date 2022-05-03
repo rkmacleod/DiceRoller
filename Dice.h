@@ -1,5 +1,4 @@
-#ifndef DICE_H
-#define DICE_H
+#pragma once
 
 class Dice
 {
@@ -24,5 +23,3 @@ class Dice
         int getModifier();
         int getValue();
 };
-
-#endif
