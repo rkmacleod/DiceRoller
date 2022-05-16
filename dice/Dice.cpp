@@ -1,5 +1,6 @@
-#include <cstdlib>
-#include <ctime>
+#include <iostream>     //std::cout
+#include <cstdlib>      //std::srand, std::rand
+#include <ctime>        //std::time
 #include "Dice.hpp"
 
 //Constructor #0: Default Constructor
@@ -15,8 +16,21 @@ Dice::Dice(int s, int n) : Dice(s, n, 0) {}
 Dice::Dice(int s, int n, int m) 
     : m_sides(s), m_num(n), m_mod(m)
 {
+    //Exception Handling
+    try
+    {
+        if(m_sides < 1)
+            throw "Exception: sides must be an integer >= 1";
+        if(m_num < 1)
+            throw "Exception: number of dice must be an integer >= 1";
+    }
+    catch(const char* ex)
+    {
+        std::cout << ex << std::endl;
+    }
+
     //Initialize random seed
-    srand(time(NULL));
+    std::srand(std::time(NULL));
 
     //Generate roll value
     roll();
@@ -30,7 +44,7 @@ void Dice::roll()
     //Generate value for dice rolls
     for(int i = 0; i < m_num; i++)
     {
-        sumRoll += (rand() % m_sides + m_MIN_SIDES);
+        sumRoll += (std::rand() % m_sides + m_MIN_SIDES);
     }
 
     //Add rolls and modifiers to value
@@ -41,14 +55,20 @@ void Dice::roll()
 //Setters
 void Dice::setSides(int s)
 {
-    if(s >= 1)
-        m_sides = s;
+    m_sides = s;
+
+    //Exception Handling
+    if(m_sides < 1)
+        throw "Exception: sides must be an integer >= 1";
 }
 
 void Dice::setNumber(int n)
 {
-    if(n >= 1)
-        m_num = n;
+    m_num = n;
+
+    //Exception Handling
+    if(m_num < 1)
+        throw "Exception: number of dice must be an integer >= 1";
 }
 
 void Dice::setModifier(int m)

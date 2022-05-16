@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Dice.hpp"
+#include "../dice/Dice.hpp"
 
 int main()
 {
