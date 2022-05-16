@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Dice.h"
+#include "Dice.hpp"
 
 int main()
 {

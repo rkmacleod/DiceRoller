@@ -1,6 +1,6 @@
 #include <cstdlib>
 #include <ctime>
-#include "Dice.h"
+#include "Dice.hpp"
 
 //Constructor #0: Default Constructor
 Dice::Dice() : Dice(6, 1, 0) {}
