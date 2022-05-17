@@ -19,8 +19,8 @@ Dice::Dice(int s, int n, int m)
     //Exception Handling
     try
     {
-        if(m_sides < 1)
-            throw "Exception: sides must be an integer >= 1";
+        if(m_sides < 2)
+            throw "Exception: sides must be an integer >= 2";
         if(m_num < 1)
             throw "Exception: number of dice must be an integer >= 1";
     }
@@ -55,20 +55,32 @@ void Dice::roll()
 //Setters
 void Dice::setSides(int s)
 {
-    m_sides = s;
-
     //Exception Handling
-    if(m_sides < 1)
-        throw "Exception: sides must be an integer >= 1";
+    try
+    {
+        if(s < 2)
+            throw "Exception: sides of dice must be an integer >= 2";
+        else m_sides = s;     //set if value is >= 2
+    }
+    catch(const char* ex)
+    {
+        std::cout << ex << std::endl;
+    }
 }
 
 void Dice::setNumber(int n)
 {
-    m_num = n;
-
     //Exception Handling
-    if(m_num < 1)
-        throw "Exception: number of dice must be an integer >= 1";
+    try
+    {
+        if(n < 1)
+            throw "Exception: number of dice must be an integer >= 1";
+        else m_num = n;     //set if value is >= 1
+    }
+    catch(const char* ex)
+    {
+        std::cout << ex << std::endl;
+    }
 }
 
 void Dice::setModifier(int m)
