@@ -17,9 +17,9 @@ public:
     void roll();
     void setSides(int);
     void setNumber(int);
-    void setModifier(int);
-    int getSides() const;
-    int getNumber() const;
-    int getModifier() const;
-    int getValue() const;
+    void setModifier(int m) {m_mod = m;}
+    int getSides() const    {return m_sides;}
+    int getNumber() const   {return m_num;}
+    int getModifier() const {return m_mod;}
+    int getValue() const    {return m_val;}
 };
