@@ -5,16 +5,16 @@
 class Die
 {
 private:
-    int m_sides;                                        //Number of sides on dice
-    int m_num;                                          //Number of dice to roll
-    int m_mod;                                          //Modifiers that add/sub to overall value
-    int m_val;                                          //The die's value when rolled
-    static const int s_MIN_VAL = 1;                     //Static constant for minimum value of a die roll
-    static const int s_MIN_SIDES = 2;                   //Static constant for minimum sides of a die, 2 sides = coinflip
-    static const int s_MIN_NUM = 1;                     //Static constant for minimum number of dice, must be >= 1
-    inline static std::random_device m_rd;              //Static random seed
-    inline static std::mt19937 m_engine;                //Static random number generator engine (mt19937) seeded with std::random_device
-    std::uniform_int_distribution<int> dist;    //Uniform int distribution for each die instance, based on number of sides
+    int m_sides;                                //Number of sides on dice
+    int m_num;                                  //Number of dice to roll
+    int m_mod;                                  //Modifiers that add/sub to overall value
+    int m_val;                                  //The die's value when rolled
+    static const int sc_MIN_VAL = 1;            //Static constant for minimum value of a die roll
+    static const int sc_MIN_SIDES = 2;          //Static constant for minimum sides of a die, 2 sides = coinflip
+    static const int sc_MIN_NUM = 1;            //Static constant for minimum number of dice, must be >= 1
+    inline static std::random_device s_rd;      //Static random seed
+    inline static std::mt19937 s_engine;        //Static random number generator engine (mt19937) seeded with std::random_device
+    std::uniform_int_distribution<int> m_dist;  //Uniform int distribution for each die instance, based on number of sides
 
 public:
     Die();                                      //Constructor #0: Default Constructor, no parameters
