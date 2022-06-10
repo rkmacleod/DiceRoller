@@ -72,5 +72,16 @@ int main()
 
     std::cout << "The attack landed with a roll of " << initiative << "!\n";
     std::cout << "Calculating damage...\n";
-    std::cout << roll_dice(mt, damage_rayOfFrost) << " points of damage were dealt!\n";
+    std::cout << roll_dice(mt, damage_rayOfFrost) << " points of damage were dealt!\n\n";
+
+
+
+    DiceRoll badSides{-1};
+    DiceRoll badNum{6,-2};
+    //std::cout << "Rolling die with -1 sides...\n";
+    //int bad1 = roll_dice(mt, badSides);
+
+    std::cout << "Rolling -2 number of dice...\n";
+    int bad2 = roll_dice(mt, badNum);
+
 }
